@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+        <!--Fonts Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+
+        <title>Orçamento Pessoal</title>
+    </head>
+    <body class="w-100">
+        <header class="bg-primary ">
+           <div class="container">
+                <nav class="navbar navbar-dark">
+                    <div class="row p-2 w-100">
+                        <div class="col-3">
+                            <i class="fas fa-piggy-bank h1 text-light "></i>
+                        </div>
+
+                        <div class="col-9">
+
+                            <!--Hamburguer-->
+                            <div class=" text-right">
+                                <button class="navbar-toggler m-auto" data-toggle="collapse" data-target="#navegacao">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
+                            
+
+                            <!--Navegação-->
+                            <div class="collapse navbar-collapse text-right" id="navegacao">
+                                <ul class="navbar-nav p-2">
+                                    <li class="nav-item"><a class="nav-link" href="index.html">Cadastro</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="consulta.html">Consulta</a></li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div>  
+                </nav>   
+           </div> 
+        </header>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="display-1 pt-5">Registro de nova despesa</p>
+                    </div>
+
+                    <div class="col-12">
+                        <form>
+                            <div>
+                                <select id="ano" name="Ano" class="btn btn-outline-dark mr-5">
+                                    <option value="0">Ano</option>
+                                    <option id="ano_atual" value='2019'>Ano</option>
+                                </select>
+
+                                <select id="mes" name="Mês" class="btn btn-outline-dark mr-5">
+                                    <option id="" value="0" name=''>--Mês--</option>
+                                    <option id="janeiro" value="Janeiro" name='Janeiro'>Janeiro</option>
+                                    <option id="fevereiro" value="Fevereiro">Fevereiro</option>
+                                    <option id="marco" value="Março">Março</option>
+                                    <option id="abril" value="Abril">Abril</option>
+                                    <option id="maio" value="Maio">Maio</option>
+                                    <option id="junho" value="Junho">Junho</option>
+                                    <option id="julho" value="Julho">Julho</option>
+                                    <option id="agosto" value="Agosto">Agosto</option>
+                                    <option id="setembro" value="Setembro">Setembro</option>
+                                    <option id="outubro" value="Outubro">Outubro</option>
+                                    <option id="novembro" value="Novembro">Novembro</option>
+                                    <option id="dezembro" value="Dezembro">Dezembro</option>
+                                </select>
+
+                                <input type="text" id="dia" name="dia"  maxlength="2" class="btn btn-outline-dark mr-5" placeholder="Dia" size="8">
+
+                                <select id="tipo" name="Tipo" class="btn btn-outline-dark ">
+                                    <option value="0">--Tipo--</option>
+                                    <option value="Alimentação">Alimentação</option>
+                                    <option value="Educação">Educação</option>
+                                    <option value="Lazer">Lazer</option>
+                                    <option value="Saúde">Saúde</option>
+                                    <option value="Transporte">Transporte</option>
+                                </select>    
+                            </div>
+                            
+                            <div class="pt-4 row w-100">
+                                <div class="col-11">
+                                    <input type="text" id="descricao" name="" class="btn btn-outline-dark mr-5" placeholder="Descrição" size="80">
+                                    <input type="text" id="valor" name="valor" class="btn btn-outline-dark mr-5" placeholder="Valor" size="8">
+                                </div>
+                                    
+
+                                <div class="col-1">
+                                    <i class="fas fa-plus-square text-primary fa-3x " onclick="validador()"></i>  
+                                </div>
+                            </div>
+                        </form>
+                    </div>                   
+                </div>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+            document.getElementById('ano_atual').innerHTML = new Date().getFullYear()
+        </script>
+
+        <script type="text/javascript" src="js/despesas.js"></script>
+        <script type="text/javascript" src="js/valida.js"></script>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </body>
+</html>
